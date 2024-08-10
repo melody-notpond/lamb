@@ -1,0 +1,7 @@
+val a : 'a
+def a = 2
+
+def f x = f x
+def f =
+  let x = 2 in
+  x 
