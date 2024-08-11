@@ -71,6 +71,7 @@ library
     -- Other library packages from which modules are imported.
     build-depends:    base ^>=4.17.2.1
                     , megaparsec ^>= 9.6.1
+                    , transformers ^>= 0.5.6.2
 
     -- Directories containing source files.
     hs-source-dirs:   src

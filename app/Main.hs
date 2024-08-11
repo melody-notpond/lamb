@@ -44,8 +44,8 @@ main =
       Right v -> return v
     for_ tops print
     putStrLn "\n-------------------------------------------------------------\n"
-    -- case Lib.typecheck tops of
-    --   Left e -> hPutStrLn stderr e >> exitFailure
-    --   Right v ->
-    --     for_ (map (\(x, (e, t)) -> x ++ ": " ++ show t ++ " = " ++ show e) v)
-    --       putStrLn
+    case Lib.typecheck tops of
+      Left e -> hPutStrLn stderr e >> exitFailure
+      Right v ->
+        for_ (map (\(x, t) -> x ++ ": " ++ show t) v)
+          putStrLn

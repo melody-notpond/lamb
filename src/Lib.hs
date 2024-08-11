@@ -1,5 +1,11 @@
-module Lib (parse, someFunc) where
+module Lib
+  ( Kind (..)
+  , Type (..)
+  , Term (..)
+  , Top (..)
+  , parse
+  , typecheck
+  ) where
+import Term
 import Parse
-
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+import Type

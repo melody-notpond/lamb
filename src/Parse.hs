@@ -14,7 +14,7 @@ import Text.Megaparsec
   , runParser
   , eof)
 import qualified Text.Megaparsec.Char.Lexer as L
-import Text.Megaparsec.Char (space1, char, alphaNumChar)
+import Text.Megaparsec.Char (space1, char, alphaNumChar, letterChar)
 import Control.Applicative ((<|>))
 import Data.Functor (($>))
 import Text.Megaparsec.Error (errorBundlePretty)
@@ -77,7 +77,7 @@ lexVal = symbol "val" $> () <?> "val"
 lexVar :: Parser String
 lexVar = lexeme
   (do
-    x <- alphaNumChar
+    x <- letterChar
     xs <- many (char '\'' <|> alphaNumChar)
     let s = x:xs
     if (s == "val") || (s == "let") || (s == "def") || (s == "in") then

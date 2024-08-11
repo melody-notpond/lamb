@@ -1,7 +1,16 @@
-val a : 'a
+val a : Int
 def a = 2
 
-def f x = f x
-def f =
-  let x = 2 in
-  x 
+val add : Int -> Int -> Int
+def add = \(a:Int).\(b:Int). 0
+
+def usesAdd = \x.\y.\z.add x y
+def id x = x
+def etaId = id
+def fnuyId x = let y = x in y
+
+def loop = loop
+def loopArg x = loopArg x
+
+def corec1 = corec2
+def corec2 = corec1
